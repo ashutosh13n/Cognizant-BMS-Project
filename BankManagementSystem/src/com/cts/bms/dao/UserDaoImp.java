@@ -93,7 +93,7 @@ public class UserDaoImp implements UserDao {
 
 		RegistrationDetails details = new RegistrationDetails();
 
-		if (!findByUserName(user.getUsername())) {
+	//	if (!findByUserName(user.getUsername())) {
 
 			Session ses = sessionFactory.getCurrentSession();
 
@@ -113,7 +113,7 @@ public class UserDaoImp implements UserDao {
 
 			details.setCustomerId(reg_id);
 
-		}
+	//	}
 
 		return details;
 	}
