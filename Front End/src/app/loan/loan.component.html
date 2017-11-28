@@ -1,0 +1,26 @@
+<p>
+  loan works!
+</p>
+<form #form="ngForm" novalidate>
+	<div class="container">
+		
+		<div>
+			<div>
+				<h2>Loan Application</h2>
+			</div>
+			<label for="loantype">Loan Type</label>
+			<br/>
+			<input type="text" [(ngModel)]="newLoan.loantype" name="loantype" id="loantype">
+			<br/>
+			<label for="loanamount">Loan Amount</label>
+			<br/>
+			<input type="number" [(ngModel)]="newLoan.loanamount" name="loanamount" id="loanamount">
+			<br/>
+
+			<button (click)="submitForm(newLoan)">Submit</button>
+			<br/>
+		
+			<a href="#"><p class="small">New Loan</p></a>
+		</div>
+	</div>
+</form>

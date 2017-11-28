@@ -1,0 +1,32 @@
+<form #form="ngForm" novalidate>
+	<div class="container">
+		
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Log In</h2>
+			</div>
+			<label for="username">Username</label>
+			<br/>
+			<input type="text" [(ngModel)]="newUser.username" name="username" id="username" required>
+			<br/>
+			<label for="password">Password</label>
+			<br/>
+			<input type="password" [(ngModel)]="newUser.password" name="password" id="password" required>
+			<br/>
+
+			<!-- <div class="form-group">
+				<label>Primary Lang</label>
+				<select class="form-control" name="primaryLanguage" [(ngModel)]="newUser.language">
+					<option *ngFor="let lang of languages">
+						{{lang}}
+					</option>
+				</select>
+			</div> -->
+
+			<button (click)="submitForm(newUser)">Sign In</button>
+			<br/>
+			<a href="#"><p class="small">Forgot your password?</p></a>
+			<a href="#"><p class="small">New User</p></a>
+		</div>
+	</div>
+</form>

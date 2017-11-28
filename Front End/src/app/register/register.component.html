@@ -1,0 +1,148 @@
+
+<div class="Container">
+  <h2>New User</h2>
+</div>
+<form name="Registration form" #form="ngForm" validate>
+  <div class="container">
+    <div class="user-info">
+      <div class="info-header">
+        <h4>User Details
+        </h4>
+      </div>
+      <div class="info-details">
+        <label >User Name : </label>
+        <input id="username" type="text" name="username" 
+        [(ngModel)] = "newCustomer.username"  required>
+        <br>
+        <label for="password"> Password : </label>
+        <input id="password" type="password" name="password"  required
+        [(ngModel)] = "newCustomer.password"  >
+        <!-- <span id="lengthMessage" class="lengthMessage"></span> -->
+        <br>
+        <label for="re_password"> Confirm Password : </label>
+        <input id="re_password" type="password" name="re_password"  required
+        [(ngModel)] = "newCustomer.re_password" onkeyup="checkPass(); return false;" >
+        <span id="confirmMessage" class="confirmMessage"></span>
+        <br>
+      </div>
+    </div>
+    <div class="personal-info">
+      <div class="info-header">
+        <h4>Personal Information</h4>
+      </div>
+      <div class="info-details">
+        <label for="name">Full Name : </label>
+        <input id="name" type="text" name="name" required
+        [(ngModel)] = "newCustomer.name" >
+        <br>
+        <label for="gender">Gender : </label>
+        <select name="gender" [(ngModel)] = "newCustomer.gender">
+          <option></option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+        <br>
+        <label for="dob">Date of Birth : </label>
+        <input id="dob" type="date" name="dob" required
+        [(ngModel)]="newCustomer.dob" >
+        <br>
+        <label for="age">Age : </label>
+        <input id="age" type="number" name="age" required
+        [(ngModel)]="newCustomer.age" >
+        <br>
+        <label for="email">E-Mail : </label>
+        <input id="email" type="email" name="email" required [(ngModel)]="newCustomer.email" onchange="email_validate(this.value);">
+        <div class="status" id="status"></div>
+        <br>
+        <label for="phone">Mobile : </label>
+        <input id="phone" type="number" name="phone" required [(ngModel)]="newCustomer.phone">
+        <br>
+        <label for="citizen_status">Nationality : </label>
+        <select name="citizen_status" id="citizen_status" [(ngModel)]="newCustomer.citizen_status">
+          <option></option>
+          <option>Indian</option>
+          <option>NRI</option>
+          <option>Other</option>
+        </select>
+        <br>
+        <label for="country">Country : </label>
+        <select id="country" name="country" [(ngModel)]="newCustomer.country">
+          <option></option>
+          <option>India</option>
+          <option>Pakistan</option>
+        </select>
+        <br>
+        <label for="state">State : </label>
+        <select id="state" name="state" [(ngModel)]="newCustomer.state">
+          <option></option>
+          <option>Andhra Prades</option>
+          <option>Tamil Nadu</option>
+          <option>Delhi</option>
+        </select>
+        <br>
+        <label for="city">City : </label>
+        <input type="text" id="city" name="city" required [(ngModel)]="newCustomer.city">
+        <br>
+        <label for="zipcode">Pincode : </label>
+        <input id="zipcode" class="zipcode" type="text" value="" pattern="\d*">
+        <br>
+        <label for="marital_status">Marital Status : </label>
+        <select name="marital_status" [(ngModel)]="newCustomer.marital_status">
+          <option></option>
+          <option value="Married">Married</option>
+          <option value="Single">Single</option>
+          <option value="Widowed">Widowed</option>
+          <option value="Divorce">Divorce</option>
+        </select>
+      </div>
+    </div>
+    <div class="acc-info">
+        <label for="guardian_name">Guardian Name : </label>
+        <input id="guardian_name" name="guardian_name" type="text" required [(ngModel)]="newCustomer.guardian_name">
+        <br>
+        <label for="guardian_type">Relation : </label>
+        <select id="guardian_type" name="guardian_type" [(ngModel)]="newCustomer.guardian_type">
+          <option></option>
+          <option value="Father">Father</option>
+          <option value="Mother">Mother</option>
+          <option value="Spouse">Spouse</option>
+          <option value="Sibling">Sibling</option>
+          <option value="Other">Other</option>
+        </select>
+        <div class="verification">
+    
+          <label for="idproof-type">ID proof type : </label>
+          <input type="text" id="idproof-type" name="idproof-type" required [(ngModel)]="newCustomer.idproof_type">
+          <br>
+          <label for="iddoc_no">ID document No : </label>
+          <input id="iddoc_no" name="iddoc-no" type="text" required [(ngModel)]="newCustomer.iddoc_no">
+          <br>
+          <label for="pancard">Pancard Number : </label>
+          <input id="pancard" name="pancard" type="text" required [(ngModel)]="newCustomer.pancard">
+          <br>
+          <label for="ref_acc_no">Reference Account Number : </label>
+          <input id="ref_acc_no" name="ref_acc_no" type="number" required [(ngModel)]="newCustomer.ref_acc_no">
+          <br>
+          <label for="ref_acc_name">Reference Account Holder Name : </label>
+          <input id="ref_acc_name" name="ref_acc_name" type="text" required [(ngModel)]="newCustomer.ref_acc_name">
+          <br>
+        </div>
+      </div>
+    </div>
+    <!-- <script>
+      var app = angular.module('myApp',[]);
+      app.controller('myController',function($scope){
+        $scope.today = new Date.now() ;
+      })
+    </script> -->
+    <!-- <div class="button">
+      <input type="submit" value="submit">
+      <input type="reset">
+    </div> -->
+    <br>
+    <div class="button">
+        <button (click)="submitRegistrationForm(model)">Submit</button>
+        <input class="btn btn-primary" type="reset" value="Reset">
+    </div>
+  
+</form>

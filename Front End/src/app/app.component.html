@@ -1,0 +1,52 @@
+<ul id="menu">
+  <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+  <li class="selected"><a [routerLink]="['/home']">Home</a></li>
+  <li><a [routerLink]="['/login']">User Login</a></li>
+  <li><a [routerLink]="['/register']">Register</a></li>
+  <li><a [routerLink]="['/about']">About Us</a></li>
+  <li><a [routerLink]="['/contact']">Contact Us</a></li>
+</ul>
+<br>
+<br>
+<div id="content_header"></div>
+    <div id="site_content">
+     
+</div>
+
+<div id="sidebar_container">
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+
+            <!-- insert your sidebar items here -->
+            <h3>Latest News</h3>
+            <h4></h4>
+            <h5>November 14th, 2017</h5>
+            <p><br /><a href="#">Read more</a></p>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <h3>Useful Links</h3>
+            <ul>
+              <li><a href="#">Branch Locator</a></li>
+              <li><a href="#">Rates</a></li>
+              <li><a href="#">Mutual Funds</a></li>
+              <li><a href="#">Job Opportunities</a></li>
+            </ul>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          
+          <div class="sidebar_base"></div>
+        </div>
+      </div>
+
+
+<div id="content">
+<router-outlet></router-outlet>
+</div>
